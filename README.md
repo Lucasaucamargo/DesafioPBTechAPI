@@ -5,29 +5,6 @@ Os testes cobrem operações CRUD (Create, Read, Update, Delete) em usuários, a
 O Allure Framework é usado para gerar relatórios detalhados dos testes.
 
 
-## Estrutura do Projeto
-
-DesafioPBTechAPI/
-├── src/
-│ ├── main/
-│ │ └── java/
-│ │ └── Page/
-│ │ └── UserPage.java
-│ ├── test/
-│ │ └── java/
-│ │ ├── Config/
-│ │ │ └── AllureSetup.java
-│ │ └── tests/
-│ │ └── runTest.java
-│ └── resources/
-│ └── schemas/
-│ ├── UsersSchema.json
-│ └── SingleUser.json
-├── pom.xml
-└── README.md
-
-
-
 ## Requisitos
 
 - Java 8 ou superior
@@ -56,13 +33,13 @@ Para executar os testes, use o seguinte comando:
 ```sh
 mvn test
 
-Os relatórios de teste do Allure serão gerados no diretório target/allure-results.
+Os relatórios de teste do Allure serão gerados no diretório seudiretoriodoprojeto/allure-results.
 
 Gerando Relatórios com Allure
 Para visualizar os relatórios do Allure, você precisará do Allure CLI. Instale o Allure CLI seguindo as instruções da documentação oficial.
 
-Depois de instalar o Allure CLI, gere e sirva os relatórios com os comandos:
-allure serve target/allure-results
+Depois de instalar o Allure, gere dentro da sua pasta do projeto e sirva os relatórios com os comandos:
+allure serve allure-results (esse comando será rodado via CMD dentro da pasta do seu projeto)
 
 Contato
 Para mais informações, entre em contato pelo email: lcamargo12@gmail.com
