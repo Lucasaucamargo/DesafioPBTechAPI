@@ -32,6 +32,7 @@ Para executar os testes, use o seguinte comando:
 
 ```sh
 mvn test
+ ```
 
 Os relatórios de teste do Allure serão gerados no diretório seudiretoriodoprojeto/allure-results.
 
