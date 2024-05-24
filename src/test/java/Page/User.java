@@ -27,7 +27,6 @@ public class User {
     @JsonProperty("company")
     private Company company;
 
-    public User() {}
 
     public User(int id, String name, String username, String email, Address address, String phone, String website, Company company) {
         this.id = id;

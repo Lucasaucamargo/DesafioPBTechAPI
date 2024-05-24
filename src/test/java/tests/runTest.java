@@ -64,10 +64,8 @@ public class runTest {
                 .assertThat()
                 .body(matchesJsonSchemaInClasspath("schemas/UsersSchema.json"));
 
-        // Pega todos os usuários da resposta
         User[] users = response.as(User[].class);
 
-        // Exibe todos os usernames junto com seus IDs
         StringBuilder message = new StringBuilder();
         message.append("Foram encontrados ").append(users.length).append(" usuários.\n");
         message.append("São esses usuários:\n");
@@ -157,17 +155,14 @@ public class runTest {
         Response response = userPage.updateUser(userId, user);
         int statusCode = response.getStatusCode();
 
-        // Verificação e mensagens de sucesso/falha
         if (statusCode == 200) {
             System.out.println("Usuário com ID " + userId + " foi atualizado com sucesso.");
         } else {
             System.err.println("Falha ao atualizar o usuário com ID " + userId + ". Status code: " + statusCode);
         }
 
-        // Asserção para garantir que o teste falhe se o status não for 200
         Assertions.assertEquals(200, statusCode, "Falha ao atualizar o usuário. Status code diferente de 200.");
 
-        // Verificação do schema do JSON da resposta
         response.then()
                 .log().all()
                 .statusCode(200)
@@ -182,7 +177,6 @@ public class runTest {
         Response response = userPage.deleteUser(userId);
         int statusCode = response.getStatusCode();
 
-        // Validação de sucesso ou falha
         if (statusCode == 200) {
             System.out.println("Usuário com ID " + userId + " foi deletado com sucesso.");
         } else {
